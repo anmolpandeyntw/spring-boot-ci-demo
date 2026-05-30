@@ -1,0 +1,13 @@
+package fristdeploy_springboot.FIrst;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FIrstApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FIrstApplication.class, args);
+	}
+
+}
