@@ -12,16 +12,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-    
+
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
+
     
       - name: Give execute permission to mvnw
         run: chmod +x mvnw
     
+
+
+
       - name: Build Jar
         run: ./mvnw clean package -DskipTests
 
@@ -47,4 +51,3 @@ jobs:
 
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-ci-demo:latest
             docker run -d --name spring-demo -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-ci-demo:latest
-        
